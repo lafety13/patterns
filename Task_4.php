@@ -83,10 +83,10 @@ class BookList
             $q->push($booksIterator->getCurrentBook());
 
             echo "<br/>ID: {$booksIterator->getKey()} (Method: " . $method[1] . ") Book: <br/>{$book->getAuthorAndTitle()}<br/>";
-            }  
+            }
         }
     }
-    //Метод вывода: рекурсивно в глубь
+    
     public function printByDepth()
     {
         $booksIterator = new BookListIterator($this);
@@ -94,7 +94,6 @@ class BookList
         while ($booksIterator->hasNextBook()) {
             $book = $booksIterator->getNextBook();
             $method = explode('::', __METHOD__);
-
             echo "<br/>ID: {$booksIterator->getKey()} (Method: " . $method[1] . ") Book: <br/>{$book->getAuthorAndTitle()}<br/>";
         }
     }
